@@ -1,596 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ROOTS Sri Lanka</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ROOTS Global (Pvt) Ltd.</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#050505;
-      color:white;
-      overflow-x:hidden;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    body::before{
-      content:'';
-      position:fixed;
-      inset:0;
-      background:
-      radial-gradient(circle at top left,#00ffcc22,transparent 30%),
-      radial-gradient(circle at bottom right,#ff00ff22,transparent 30%),
-      radial-gradient(circle at center,#0066ff22,transparent 40%);
-      z-index:-1;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    .container{
-      width:90%;
-      max-width:1400px;
-      margin:auto;
-      padding:40px 0;
-    }
+/* BACKGROUND */
 
-    /* HERO SECTION */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at top,#ffdc5030,transparent 30%),
+  radial-gradient(circle at bottom,#ff8c0030,transparent 30%);
+  z-index:-2;
+}
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:60px;
-      flex-wrap:wrap;
-    }
+.glow{
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,#ffdc5040,transparent 70%);
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+  filter:blur(60px);
+  z-index:-1;
+}
 
-    .hero-text{
-      flex:1;
-      min-width:320px;
-    }
+/* CONTAINER */
 
-    .hero-text h1{
-      font-family:"Comic Sans MS", cursive;
-      font-size:110px;
-      color:#ffdc50;
-      line-height:1;
-      margin-bottom:20px;
-      text-shadow:
-      0 0 10px rgba(255,220,80,0.6),
-      0 0 30px rgba(255,220,80,0.3);
-    }
+.container{
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+}
 
-    .hero-text h2{
-      font-size:32px;
-      margin-bottom:25px;
-      color:#ffffff;
-      font-weight:600;
-    }
+/* NAVBAR */
 
-    .hero-text p{
-      color:#d0d0d0;
-      line-height:1.8;
-      max-width:650px;
-      margin-bottom:35px;
-      font-size:16px;
-    }
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 0;
+}
 
-    .btn{
-      display:inline-block;
-      padding:16px 36px;
-      border-radius:60px;
-      background:linear-gradient(90deg,#00e5ff,#ff00c8);
-      color:white;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.4s;
-      box-shadow:0 0 30px rgba(0,229,255,0.3);
-    }
+.logo{
+  font-family:"Comic Sans MS", cursive;
+  font-size:32px;
+  color:#ffdc50;
+  letter-spacing:2px;
+}
 
-    .btn:hover{
-      transform:translateY(-5px);
-      box-shadow:0 0 50px rgba(255,0,200,0.35);
-    }
+.nav-btn{
+  padding:12px 24px;
+  border-radius:50px;
+  border:1px solid rgba(255,255,255,0.15);
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
 
-    .hero-image{
-      flex:1;
-      min-width:320px;
-      position:relative;
-    }
+.nav-btn:hover{
+  background:#ffdc50;
+  color:black;
+}
 
-    /* GLASS CARD */
+/* HERO */
 
-    .glass-card{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(25px);
-      border-radius:35px;
-      padding:50px;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 0 50px rgba(0,255,255,0.08);
-    }
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
 
-    .glass-card::before{
-      content:'';
-      position:absolute;
-      width:350px;
-      height:350px;
-      background:linear-gradient(#00e5ff,#ff00c8);
-      border-radius:50%;
-      filter:blur(120px);
-      top:-120px;
-      right:-120px;
-      opacity:0.2;
-    }
+.hero h1{
+  font-family:"Comic Sans MS", cursive;
+  font-size:120px;
+  line-height:1;
+  font-weight:800;
+  margin-bottom:25px;
+  background:linear-gradient(180deg,#ffffff,#ffdc50);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .logo{
-      font-family:"Comic Sans MS", cursive;
-      font-size:80px;
-      color:#ffdc50;
-      margin-bottom:10px;
-      text-shadow:
-      0 0 10px rgba(255,220,80,0.6),
-      0 0 30px rgba(255,220,80,0.3);
-    }
+.hero p{
+  color:#d0d0d0;
+  font-size:18px;
+  max-width:850px;
+  line-height:1.9;
+  margin-bottom:40px;
+}
 
-    .tagline{
-      font-size:22px;
-      color:#cfcfcf;
-      margin-bottom:25px;
-    }
+.hero-btn{
+  display:inline-block;
+  padding:16px 38px;
+  border-radius:50px;
+  background:linear-gradient(90deg,#ffdc50,#ff8c00);
+  color:black;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.4s;
+  box-shadow:0 0 40px rgba(255,220,80,0.25);
+}
 
-    /* CONTACT GRID */
+.hero-btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 60px rgba(255,220,80,0.45);
+}
 
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-      margin-top:80px;
-    }
+/* WAVE */
 
-    .contact-box{
-      background:#0c0c0c;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:28px;
-      padding:35px;
-      transition:0.4s;
-      position:relative;
-      overflow:hidden;
-    }
+.wave{
+  width:100%;
+  height:260px;
+  margin-top:60px;
+  position:relative;
+  overflow:hidden;
+}
 
-    .contact-box::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg,transparent,rgba(255,255,255,0.03));
-    }
+.wave::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+  radial-gradient(circle at 20% 50%,#ffdc50,transparent 20%),
+  radial-gradient(circle at 50% 50%,#ff8c00,transparent 20%),
+  radial-gradient(circle at 80% 50%,#ffdc50,transparent 20%);
+  filter:blur(70px);
+  opacity:0.9;
+}
 
-    .contact-box:hover{
-      transform:translateY(-8px);
-      border-color:#00e5ff;
-      box-shadow:0 0 40px rgba(0,229,255,0.18);
-    }
+.wave svg{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
 
-    .contact-box h3{
-      color:#00e5ff;
-      margin-bottom:15px;
-      font-size:22px;
-    }
+/* CARDS */
 
-    .contact-box p{
-      color:#d0d0d0;
-      line-height:1.7;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:70px;
+}
 
-    /* SECTION */
+.card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:28px;
+  padding:35px;
+  transition:0.4s;
+  backdrop-filter:blur(15px);
+  position:relative;
+  overflow:hidden;
+}
 
-    .section{
-      margin-top:120px;
-    }
+.card::before{
+  content:'';
+  position:absolute;
+  width:220px;
+  height:220px;
+  background:radial-gradient(circle,#ffdc5030,transparent 70%);
+  top:-100px;
+  right:-100px;
+}
 
-    .section-title{
-      font-size:60px;
-      font-weight:700;
-      margin-bottom:55px;
-      background:linear-gradient(90deg,#ffffff,#00e5ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#ffdc50;
+  box-shadow:0 0 40px rgba(255,220,80,0.15);
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-    }
+.card h3{
+  font-size:26px;
+  margin-bottom:18px;
+  color:#ffdc50;
+}
 
-    /* CARDS */
+.card p,
+.card li{
+  color:#cfcfcf;
+  line-height:1.8;
+}
 
-    .card{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:30px;
-      padding:40px;
-      transition:0.4s;
-      position:relative;
-      overflow:hidden;
-    }
+.card ul{
+  padding-left:20px;
+}
 
-    .card::before{
-      content:'';
-      position:absolute;
-      width:220px;
-      height:220px;
-      background:linear-gradient(#00e5ff,#ff00c8);
-      border-radius:50%;
-      filter:blur(100px);
-      top:-100px;
-      right:-100px;
-      opacity:0.12;
-    }
+/* SECTION */
 
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:#ff00c8;
-      box-shadow:0 0 45px rgba(255,0,200,0.15);
-    }
+.section{
+  padding:120px 0;
+}
 
-    .card h3{
-      font-size:28px;
-      margin-bottom:18px;
-    }
+.section-title{
+  text-align:center;
+  font-size:62px;
+  margin-bottom:20px;
+  font-weight:700;
+  background:linear-gradient(180deg,#fff,#ffdc50);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .card p{
-      color:#cfcfcf;
-      line-height:1.8;
-    }
+.section-subtitle{
+  text-align:center;
+  color:#aaaaaa;
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+}
 
-    /* STATS */
+/* FEATURE */
 
-    .stats{
-      display:flex;
-      flex-wrap:wrap;
-      gap:25px;
-    }
+.feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  margin-top:80px;
+}
 
-    .stat-box{
-      flex:1;
-      min-width:220px;
-      background:#0d0d0d;
-      border-radius:30px;
-      padding:40px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
-      transition:0.4s;
-    }
+.feature-box{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:32px;
+  padding:50px;
+  position:relative;
+  overflow:hidden;
+}
 
-    .stat-box:hover{
-      transform:translateY(-8px);
-      border-color:#00e5ff;
-      box-shadow:0 0 40px rgba(0,229,255,0.15);
-    }
+.feature-box::before{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle,#ffdc5030,transparent 70%);
+  top:-100px;
+  right:-100px;
+}
 
-    .stat-box h2{
-      font-size:60px;
-      margin-bottom:10px;
-      background:linear-gradient(90deg,#00e5ff,#ff00c8);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+.feature-box h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
 
-    .stat-box p{
-      color:#d0d0d0;
-      font-size:18px;
-    }
+.feature-box p{
+  color:#cfcfcf;
+  line-height:1.9;
+  margin-bottom:30px;
+}
 
-    /* CTA */
+.feature-box img{
+  width:100%;
+  border-radius:24px;
+}
 
-    .cta{
-      margin-top:120px;
-      padding:70px;
-      border-radius:35px;
-      background:linear-gradient(135deg,#00e5ff22,#ff00c822);
-      border:1px solid rgba(255,255,255,0.08);
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-    }
+/* STATS */
 
-    .cta::before{
-      content:'';
-      position:absolute;
-      width:400px;
-      height:400px;
-      background:linear-gradient(#00e5ff,#ff00c8);
-      border-radius:50%;
-      filter:blur(140px);
-      top:-200px;
-      right:-100px;
-      opacity:0.15;
-    }
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:70px;
+}
 
-    .cta h2{
-      font-size:52px;
-      margin-bottom:20px;
-    }
+.stat{
+  text-align:center;
+  padding:50px 30px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+}
 
-    .cta p{
-      color:#d0d0d0;
-      font-size:18px;
-      line-height:1.8;
-    }
+.stat h2{
+  font-size:72px;
+  color:#ffdc50;
+  margin-bottom:10px;
+}
 
-    /* FOOTER */
+.stat p{
+  color:#cfcfcf;
+  font-size:18px;
+}
 
-    footer{
-      padding:50px 0;
-      text-align:center;
-      color:#8a8a8a;
-      margin-top:80px;
-    }
+/* CTA */
 
-    /* RESPONSIVE */
+.cta{
+  margin:120px 0;
+  padding:90px 50px;
+  text-align:center;
+  border-radius:40px;
+  background:
+  linear-gradient(135deg,
+  rgba(255,220,80,0.08),
+  rgba(255,140,0,0.05));
+  border:1px solid rgba(255,255,255,0.08);
+  position:relative;
+  overflow:hidden;
+}
 
-    @media(max-width:768px){
+.cta::before{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#ffdc5030,transparent 70%);
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+}
 
-      .hero-text h1{
-        font-size:70px;
-      }
+.cta h2{
+  font-size:64px;
+  margin-bottom:20px;
+}
 
-      .hero-text h2{
-        font-size:24px;
-      }
+.cta p{
+  max-width:850px;
+  margin:auto;
+  color:#d0d0d0;
+  line-height:1.9;
+  margin-bottom:35px;
+}
 
-      .section-title{
-        font-size:42px;
-      }
+/* FOOTER */
 
-      .cta h2{
-        font-size:38px;
-      }
+footer{
+  padding:50px 0;
+  border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+  color:#999;
+}
 
-      .glass-card{
-        padding:35px;
-      }
+/* RESPONSIVE */
 
-    }
+@media(max-width:1000px){
 
-  </style>
+  .feature{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:72px;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .cta h2{
+    font-size:42px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="glow"></div>
 
-    <!-- HERO -->
+<div class="container">
 
-    <section class="hero">
+<!-- NAV -->
 
-      <div class="hero-text">
+<nav>
 
-        <h1>ROOTS</h1>
+  <div class="logo">
+    ROOTS
+  </div>
 
-        <h2>
-          Freshly Squeezed Juices, Smoothies & Ice Cream Sundaes
-        </h2>
+  <a href="#" class="nav-btn">
+    Contact Us
+  </a>
 
-        <p>
-          Roots Sri Lanka pioneers premium tropical beverages,
-          artisan gelato, and immersive dessert experiences —
-          blending innovation, freshness, and authentic island flavors
-          for modern lifestyle consumers.
-        </p>
+</nav>
 
-        <a href="#" class="btn">
-          Explore Our Brand
-        </a>
+<!-- HERO -->
 
-      </div>
+<section class="hero">
 
-      <div class="hero-image">
+  <h1>ROOTS</h1>
 
-        <div class="glass-card">
+  <p>
+     <b>Freshly Squeezed Juices, Smoothies & Ice Cream Sundaes. </b><br>
+    ROOTS Global (Pvt) Ltd. pioneers premium tropical beverages,
+    artisan gelato, and immersive dessert experiences —
+    delivering authentic Sri Lankan flavors through wellness-driven innovation.
+  </p>
 
-          <div class="logo">ROOTS</div>
+  <a href="https://rootslk.com" class="hero-btn">
+    Explore ROOTS
+  </a>
 
-          <div class="tagline">
-            Innovation. Freshness. Creativity.
-          </div>
+  <div class="wave">
 
-          <p style="color:#d0d0d0; line-height:1.8;">
-            A next-generation tropical lifestyle brand redefining
-            Sri Lanka’s beverage and dessert culture through
-            premium experiences and wellness-driven products.
-          </p>
+    <svg viewBox="0 0 1440 320">
+      <path fill="none"
+      stroke="#ffdc50"
+      stroke-width="3"
+      d="M0,160 C240,280 480,40 720,160 C960,280 1200,40 1440,160"/>
+    </svg>
 
-        </div>
+  </div>
 
-      </div>
+</section>
 
-    </section>
+<!-- CONTACT -->
 
-    <!-- CONTACT -->
+<section class="cards">
 
-    <section class="contact-grid">
+  <div class="card">
+    <h3>Website</h3>
+    <p>rootslk.com</p>
+  </div>
 
-      <div class="contact-box">
-        <h3>Website</h3>
-        <p>rootslk.com</p>
-      </div>
+  <div class="card">
+    <h3>Email</h3>
+    <p>rootsglobalpvtltd@gmail.com</p>
+  </div>
 
-      <div class="contact-box">
-        <h3>Email</h3>
-        <p>rootsglobalpvtltd@gmail.com</p>
-      </div>
+  <div class="card">
+    <h3>Phone</h3>
+    <p>0112 506 292</p>
+  </div>
 
-      <div class="contact-box">
-        <h3>Phone</h3>
-        <p>0112 506 292</p>
-      </div>
+  <div class="card">
+    <h3>Address</h3>
+    <p>Majestic City, Colombo, Sri Lanka</p>
+  </div>
 
-      <div class="contact-box">
-        <h3>Address</h3>
-        <p>Majestic City, Colombo, Sri Lanka</p>
-      </div>
+</section>
 
-    </section>
+<!-- ABOUT -->
 
-    <!-- OFFERINGS -->
+<section class="section">
 
-    <section class="section">
+  <h2 class="section-title">
+    Meet ROOTS
+  </h2>
 
-      <h2 class="section-title">
-        Key Offerings
-      </h2>
+  <p class="section-subtitle">
+    ROOTS Sri Lanka serves health-conscious consumers,
+    hospitality brands, and modern lifestyle audiences
+    with authentic island-inspired beverages and desserts.
+  </p>
 
-      <div class="grid">
+  <div class="feature">
 
-        <div class="card">
-          <h3>Fresh Fruit Juices</h3>
-
-          <p>
-            Nutrient-rich tropical juice blends crafted
-            using locally sourced premium produce.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Artisan Gelato</h3>
-
-          <p>
-            Handcrafted premium gelato inspired by
-            tropical flavors and modern indulgence.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Ice Cream Sundaes</h3>
-
-          <p>
-            Creative dessert experiences designed
-            for celebrations and everyday enjoyment.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- STATS -->
-
-    <section class="section">
-
-      <h2 class="section-title">
-        Quick Facts
-      </h2>
-
-      <div class="stats">
-
-        <div class="stat-box">
-          <h2>1997</h2>
-          <p>Founded</p>
-        </div>
-
-        <div class="stat-box">
-          <h2>26+</h2>
-          <p>Outlets</p>
-        </div>
-
-        <div class="stat-box">
-          <h2>SL</h2>
-          <p>Headquarters</p>
-        </div>
-
-        <div class="stat-box">
-          <h2>100%</h2>
-          <p>Fresh Ingredients</p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- DIFFERENTIATORS -->
-
-    <section class="section">
-
-      <h2 class="section-title">
-        Why Choose ROOTS
-      </h2>
-
-      <div class="grid">
-
-        <div class="card">
-
-          <h3>Authentic Sri Lankan Taste</h3>
-
-          <p>
-            Locally sourced fruits supporting farmers,
-            sustainability, and tropical authenticity.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <h3>Health & Wellness Focus</h3>
-
-          <p>
-            Nutrient-packed beverages and guilt-free
-            indulgence for mindful consumers.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <h3>Experiential Services</h3>
-
-          <p>
-            Mobile juice trucks and gelato carts
-            delivering immersive brand experiences.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- CTA -->
-
-    <section class="cta">
+    <div class="feature-box">
 
       <h2>
-        Let’s Build Something Fresh Together
+        Innovation Meets Tropical Freshness
       </h2>
 
       <p>
-        Contact ROOTS Sri Lanka at
-        rootsglobalpvtltd@gmail.com
-        or 0112 506 292
-        to discuss partnerships, events,
-        retail opportunities, and collaborations.
+        From freshly squeezed juices to artisan gelato and indulgent
+        ice cream sundaes, ROOTS combines premium ingredients,
+        experiential service, and modern branding to create memorable moments.
       </p>
 
-    </section>
+      <a href="#" class="hero-btn">
+        Discover More
+      </a>
 
-    <!-- FOOTER -->
+    </div>
 
-    <footer>
+    <div class="feature-box">
 
-      © 2026 ROOTS Sri Lanka — All Rights Reserved
+      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/476637881_1064909952318957_7855890946943674921_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=4wyGkrNfRfIQ7kNvwEnw2Gf&_nc_oc=AdoGAKba7QpnyJsdEfoHXr7L2fnnFNzkD2u6YNHKKa_pLzZnNXKnxDyA1WtWDmSKMOc&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=6sDhYa7yOxq3IxQ8aqXxtQ&_nc_ss=7b289&oh=00_Af7Dey_0jceHrqdrB5Bdg3TFFJzcCBPdp40G5DUp1ShXkQ&oe=6A10D514" alt="ROOTS Juice"/>
 
-    </footer>
+    </div>
 
   </div>
+
+</section>
+
+<!-- OFFERINGS -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    Key Offerings
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Fresh Fruit Juices</h3>
+      <p>
+        Nutrient-rich blends crafted from locally sourced tropical produce.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Artisan Gelato</h3>
+      <p>
+        Premium tropical-inspired indulgence with wellness-focused options.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Ice Cream Sundaes</h3>
+      <p>
+        Creative dessert experiences designed for every mood and occasion.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Mobile Juice Truck</h3>
+      <p>
+        On-the-go freshness for corporate events and outdoor activations.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Gelato Cart Service</h3>
+      <p>
+        Signature ROOTS treats brought directly to celebrations.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    Quick Facts
+  </h2>
+
+  <div class="stats">
+
+    <div class="stat">
+      <h2>1997</h2>
+      <p>Founded</p>
+    </div>
+
+    <div class="stat">
+      <h2>26+</h2>
+      <p>Outlets</p>
+    </div>
+
+    <div class="stat">
+      <h2>HQ</h2>
+      <p>Colombo 04, Sri Lanka.</p>
+    </div>
+
+    <div class="stat">
+      <h2>100%</h2>
+      <p>Fresh Ingredients</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INDUSTRIES -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    Industries Served
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Hospitality</h3>
+      <p>Hotels, resorts, and luxury hospitality experiences.</p>
+    </div>
+
+    <div class="card">
+      <h3>Retail</h3>
+      <p>Shopping malls, food courts, and lifestyle destinations.</p>
+    </div>
+
+    <div class="card">
+      <h3>Events & Catering</h3>
+      <p>Corporate events, weddings, celebrations, and activations.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DIFFERENTIATORS -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    Why Choose ROOTS
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>Authentic Sri Lankan Taste</h3>
+
+      <p>
+        Locally sourced fruits supporting farmers,
+        sustainability, and tropical authenticity.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Health & Wellness Focus</h3>
+
+      <p>
+        Sugar-free and nutrient-packed options
+        for mindful indulgence.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Experiential Services</h3>
+
+      <p>
+        Mobile trucks and gelato carts for unique,
+        participatory brand experiences.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <h2>
+    Build Fresh Experiences With ROOTS
+  </h2>
+
+  <p>
+    Contact ROOTS Sri Lanka at
+    rootsglobalpvtltd@gmail.com
+    or 0112 506 292
+    to explore partnerships, retail opportunities,
+    events, and collaborations.
+  </p>
+
+  <a href="https://web.whatsapp.com/send?phone=94706880109" class="hero-btn">
+    Contact ROOTS
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div>
+    ROOTS Global (Pvt) Ltd.
+  </div>
+
+  <div>
+    rootslk.com
+  </div>
+
+  <div>
+    Colombo, Sri Lanka
+  </div>
+
+</footer>
+
+</div>
 
 </body>
 </html>
